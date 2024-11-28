@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control MQTT - ESP32</title>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="videoContainer">
+        <img id="videoFrame" src="" alt="Video en Vivo" />
+    </div>
+
+    <div class="buttons-container">
+        <!-- Control de Motores -->
+        <div class="motor-buttons">
+            <button id="btn-adelante">▲</button>
+            <button id="btn-izquierda">◀</button>
+            <button id="btn-detener">■</button>
+            <button id="btn-derecha">▶</button>
+            <button id="btn-atras">▼</button>
+        </div>
+
+        <!-- Control del Servomotor -->
+        <div class="servo-buttons">
+            <button id="btn-servo-izquierdo">←</button>
+            <button id="btn-servo-recto">↔</button>
+            <button id="btn-servo-derecho">→</button>
+        </div>
+    </div>
+
+    <script type="module" src="/motor_H.js"></script>
+    <script src="/mqtt.js"></script>
+</body>
+</html>
+

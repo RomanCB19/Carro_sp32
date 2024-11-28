@@ -1,0 +1,154 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: white;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#videoContainer {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#videoFrame {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Wrapper for Buttons */
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+/* Motor Buttons - Flecha Layout */
+.motor-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+  padding: 20px;
+  
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  height: 250px;
+}
+
+button {
+  width: 70px;
+  height: 70px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(120deg, #42a5f5, #007bff);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background: linear-gradient(120deg, #007bff, #42a5f5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Positions for Motor Control */
+button#btn-adelante {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+button#btn-atras {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+button#btn-izquierda {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+button#btn-derecha {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+button#btn-detener {
+  grid-column: 2;
+  grid-row: 2;
+  background: linear-gradient(120deg, #ff5252, #e53935);
+}
+
+button#btn-detener:hover {
+  background: linear-gradient(120deg, #e53935, #ff5252);
+}
+
+/* Servo Buttons Layout */
+.servo-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  width: 250px;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .buttons-container {
+      flex-direction: row; /* Coloca los contenedores uno al lado del otro */
+  }
+
+  .servo-buttons {
+      width: auto; /* Ajusta automáticamente al contenido */
+  }
+}
+
+@media (max-width: 768px) {
+  .buttons-container {
+      flex-direction: column; /* Coloca los contenedores uno debajo del otro */
+  }
+
+  .motor-buttons, .servo-buttons {
+      width: 90%;
+  }
+
+  button {
+      width: 80px;
+      height: 80px;
+      font-size: 1.2rem;
+  }
+}
